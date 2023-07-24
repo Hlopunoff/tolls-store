@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "quotes": ["error", "single"],
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript/ban-ts-comment": false,
+    "jsx-quotes": ["error", "prefer-double"],
+    "indent": ["warn", 2],
+    "max-len": ["warn", { "code": 120 }],
+    "semi": ["warn", "always"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "root": true
+}

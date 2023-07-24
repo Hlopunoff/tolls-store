@@ -1,0 +1,11 @@
+@function to-em($currentFont, $parentFont) {
+  @return calc($currentFont / $parentFont) + em;
+}
+
+@function to-rem($currentFont) {
+  @return calc($currentFont / 16) + rem;
+}
+
+@function to-prc($child, $parent) {
+  @return calc($child / $parent) * 100%;
+}
