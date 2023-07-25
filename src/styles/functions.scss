@@ -1,4 +1,4 @@
-@function to-em($currentFont, $parentFont) {
+@function to-em($currentFont, $parentFont: 16) {
   @return calc($currentFont / $parentFont) + em;
 }
 

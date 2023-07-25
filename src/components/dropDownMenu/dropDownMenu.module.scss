@@ -1,0 +1,97 @@
+@import '../../styles/functions';
+
+.menu {
+  position: absolute;
+  display: none;
+  max-width: to-em(310);
+  width: 100%;
+  top: to-em(88);
+  left: 17%;
+  z-index: 20;
+
+  &_shown {
+    display: block;
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+  }
+
+  .category {
+    color: var(--black);
+    padding: to-em(26) to-em(24);
+    cursor: pointer;
+    border-bottom: 1px solid var(--background);
+
+    &:last-child {
+      border: none;
+    }
+
+    &__title {
+      font-family: var(--second-family);
+      font-size: to-rem(16);
+      font-style: normal;
+      font-weight: 400;
+      line-height: to-prc(20, 16);
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      background-image: url('../../assets/icons/arrow-left-black.svg');
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--soal);
+
+      /* stylelint-disable-next-line selector-class-pattern */
+      .category__icon {
+        background-image: url('../../assets/icons/arrow-left.svg');
+      }
+
+      .submenu {
+        display: grid;
+      }
+    }
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.submenu {
+  position: absolute;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: to-em(90);
+  row-gap: to-em(20);
+  top: 0;
+  left: 93%;
+  padding: to-em(36) to-em(126) to-em(28) to-em(126);
+  background-color: var(--white);
+  z-index: -1;
+
+  &__category {
+    white-space: nowrap;
+    color: var(--black);
+    font-size: to-rem(16);
+    font-style: normal;
+    font-weight: 500;
+    line-height: to-prc(20, 16);
+
+    &:hover {
+      color: var(--orange);
+    }
+  }
+}

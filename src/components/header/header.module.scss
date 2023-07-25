@@ -1,0 +1,194 @@
+/* stylelint-disable value-keyword-case */
+@import '../../styles/functions';
+
+$search-icon: url('../../assets/icons/search.svg');
+
+.header {
+  &-top {
+    background-color: var(--soal);
+
+    &__logo {
+      max-width: 90px;
+    }
+
+    &__schedule {
+      color: var(--white);
+      font-size: to-rem(16);
+      line-height: to-prc(20, 16);
+      font-weight: 500;
+    }
+
+    &__callback {
+      display: flex;
+      flex-direction: column;
+      row-gap: to-em(16);
+    }
+
+    &__phone {
+      color: var(--white);
+      font-size: to-rem(18);
+      font-weight: 600;
+      font-style: normal;
+      line-height: to-prc(20, 18);
+    }
+
+    &__call {
+      width: max-content;
+      color: var(--red);
+      font-size: to-rem(14);
+      font-style: normal;
+      font-weight: 500;
+      line-height: to-prc(16, 14);
+      border-bottom: 1px solid currentColor;
+    }
+
+    &__options {
+      display: flex;
+      align-items: center;
+      column-gap: 1px;
+      list-style-type: none;
+      height: to-em(96);
+    }
+
+    &__option {
+      height: 100%;
+      width: to-em(96);
+      position: relative;
+      background-color: var(--dark-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .badge {
+        position: absolute;
+        top: 30%;
+        right: 25%;
+        transform: translateY(-30%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        color: var(--white);
+        font-size: to-rem(11);
+        font-style: normal;
+        font-weight: 500;
+        line-height: to-prc(12, 11);
+        background-color: var(--orange);
+        border-radius: 50%;
+      }
+
+      &:hover {
+        background-color: var(--orange);
+
+        .badge {
+          background-color: var(--dark-gray);
+        }
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &__total {
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+      font-size: to-rem(16);
+      line-height: to-prc(20, 16);
+      font-style: normal;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &-bottom {
+    position: relative;
+    background-color: var(--black);
+    padding: to-em(18) 0;
+
+    &__catalog {
+      padding: to-em(15);
+      display: flex;
+      align-items: center;
+      column-gap: to-em(15);
+      border-radius: 5px;
+      border: 1px solid var(--orange);
+      background-color: transparent;
+      color: var(--white);
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      span {
+        font-size: to-rem(16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: to-prc(20, 16);
+      }
+    }
+
+    &__categories {
+      display: flex;
+      align-items: center;
+      column-gap: to-em(60);
+    }
+
+    &__category {
+      color: var(--white);
+      font-size: to-rem(16);
+      font-style: normal;
+      font-weight: 500;
+      line-height: to-prc(20, 16);
+    }
+
+    &__socials {
+      display: flex;
+      align-items: center;
+      column-gap: to-em(12);
+    }
+
+    &__search-wrap {
+      position: relative;
+      max-width: to-em(310);
+      width: 100%;
+      height: to-em(52);
+
+      &::before {
+        content: '';
+        background-image: url('../../assets/icons/search.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: to-em(9);
+        pointer-events: none;
+      }
+    }
+
+    &__search {
+      width: 100%;
+      height: 100%;
+      background-color: var(--white);
+      padding: to-em(14) to-em(21);
+      border: none;
+      border-radius: 5px;
+      font-size: to-rem(16);
+      font-style: normal;
+      font-weight: 500;
+      line-height: to-prc(20, 16);
+      color: var(--smoky);
+      padding-left: to-em(45);
+    }
+  }
+}
