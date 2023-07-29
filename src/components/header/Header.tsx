@@ -1,4 +1,5 @@
 import { useState, MouseEventHandler } from 'react';
+import { useMatchMedia } from '../../hooks/use-match-media';
 
 import { DropDownMenu } from '../dropDownMenu/DropDownMenu';
 
@@ -13,7 +14,10 @@ import instagramIcon from '../../assets/icons/instagram.svg';
 import vkIcon from '../../assets/icons/vk.svg';
 import facebookIcon from '../../assets/icons/facebook.svg';
 
+const queries = ['(max-width: 1200px)'];
+
 export const Header = () => {
+  const [isDesktop] = useMatchMedia(queries);
   const [isOpened, setIsOpened] = useState(false);
 
   const showMenu: MouseEventHandler<HTMLButtonElement> = () => {
@@ -28,10 +32,13 @@ export const Header = () => {
     <header>
       <nav className={s.headerTop}>
         <div className="container flex space-between">
-          <div className="header-top__logo">
+          <div className={s.headerTopLogo}>
             <img src={logo} alt="Логотип instroom" />
           </div>
-          <span className={s.headerTopSchedule}>Время работы: 10:00–20:00</span>
+          <div className={s.headerTopSchedule}>
+            <span>Время работы:</span>
+            <span>10:00–20:00</span>
+          </div>
           <div className={s.headerTopCallback}>
             <span className={s.headerTopPhone}>+7 495 120-32-14</span>
             <a href="tel:+74951203214" className={s.headerTopCall}>
@@ -64,7 +71,11 @@ export const Header = () => {
       </nav>
       <nav className={s.headerBottom}>
         <div className="container flex space-between">
-          <button className={s.headerBottomCatalog} onClick={showMenu}>
+          <button
+            className={s.headerBottomCatalog}
+            onClick={showMenu}
+            title="Каталог товаров"
+          >
             <img src={burgerMenuIcon} alt="Каталог товаров" />
             <span>Каталог товаров</span>
           </button>

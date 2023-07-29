@@ -6,7 +6,7 @@
   max-width: to-em(310);
   width: 100%;
   top: to-em(88);
-  left: 17%;
+  left: clamp(0%, 2.5vw, 17%);
   z-index: 20;
 
   &_shown {
@@ -74,10 +74,10 @@
   display: none;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  column-gap: to-em(90);
+  column-gap: clamp(to-em(20), 4vw, to-em(90));
   row-gap: to-em(20);
   top: 0;
-  left: 93%;
+  left: clamp(50%, 20vw, 93%);
   padding: to-em(36) to-em(126) to-em(28) to-em(126);
   background-color: var(--white);
   z-index: -1;

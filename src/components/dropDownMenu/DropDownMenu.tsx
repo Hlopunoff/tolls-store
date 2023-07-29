@@ -46,118 +46,24 @@ export const DropDownMenu: FC<DropDownMenuProps> = ({ isOpened }) => {
 };
 
 const Submenu = () => {
+  //! Заглушка на время верстки (В будущем нужно убрать)
+  let submenuItems: JSX.Element[] = [];
+
+  for (let i = 0; i < 22; i++) {
+    submenuItems.push(
+      <SubmenuItem key={i} text="Садово огородный инвентарь" />,
+    );
+  }
+
+  return <ul className={s.submenu}>{submenuItems}</ul>;
+};
+
+const SubmenuItem = ({ text }: { text: string }) => {
   return (
-    <ul className={s.submenu}>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-      <li className={s.submenuCategory}>
-        <a href="#" className={s.submenuCategoryLink}>
-          Садово огородный инвентарь
-        </a>
-      </li>
-    </ul>
+    <li className={s.submenuCategory}>
+      <a href="#" className={s.submenuCategoryLink}>
+        {text}
+      </a>
+    </li>
   );
 };
