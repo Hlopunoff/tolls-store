@@ -1,0 +1,103 @@
+@import '../../styles/functions';
+
+.hero {
+  background-color: var(--soal);
+  padding: to-em(20) 0;
+
+  .banners {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, clamp(to-em(100), 16.7vw, to-em(244)));
+    gap: to-em(20);
+
+    @media (max-width: to-em(768)) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(3, clamp(to-em(100), 16.7vw, to-em(244)));
+    }
+  }
+
+  .banner {
+    position: relative;
+    padding: clamp(to-em(15, 20), 1.7vw, to-em(30, 20));
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+
+    &_1 {
+      background-image: url('../../assets/images/banner.png');
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    &_2 {
+      background-image: url('../../assets/images/banner-2.png');
+      grid-row: span 2;
+    }
+
+    &_3 {
+      background-image: url('../../assets/images/banner-3.png');
+    }
+
+    &_4 {
+      background-image: url('../../assets/images/banner-4.png');
+
+      @media (max-width: to-em(768)) {
+        grid-column: span 2;
+      }
+    }
+
+    &__title {
+      color: var(--white);
+      font-family: var(--second-family);
+      font-size: clamp(to-rem(16), 2vw, to-rem(20));
+      font-style: normal;
+      font-weight: 400;
+      line-height: to-prc(24, 20);
+
+      &_main {
+        font-size: clamp(to-rem(24), 2.8vw, to-rem(40));
+        line-height: to-prc(48, 40);
+
+        @media (max-width: to-em(567)) {
+          font-size: to-rem(16);
+        }
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--black);
+      padding: clamp(to-em(5), 1vw, to-em(20.4));
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      &:hover {
+        background-color: var(--orange);
+      }
+    }
+
+    &__cla {
+      background-color: var(--orange);
+      color: var(--white);
+      border: none;
+      text-transform: uppercase;
+      padding: clamp(to-em(5, 14), 1vw, to-em(14, 14))
+        clamp(to-em(15, 14), 2.2vw, to-em(32, 14));
+      font-size: to-rem(14);
+      font-style: normal;
+      font-weight: 600;
+      line-height: to-prc(16, 14);
+      border-radius: 5px;
+      margin-top: clamp(10%, 15vw, 30%);
+
+      @media (max-width: to-em(680, 14)) {
+        margin-top: 20%;
+        font-size: to-rem(12);
+      }
+    }
+  }
+}

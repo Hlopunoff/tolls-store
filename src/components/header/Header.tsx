@@ -1,5 +1,4 @@
 import { useState, MouseEventHandler } from 'react';
-import { useMatchMedia } from '../../hooks/use-match-media';
 
 import { DropDownMenu } from '../dropDownMenu/DropDownMenu';
 
@@ -14,10 +13,7 @@ import instagramIcon from '../../assets/icons/instagram.svg';
 import vkIcon from '../../assets/icons/vk.svg';
 import facebookIcon from '../../assets/icons/facebook.svg';
 
-const queries = ['(max-width: 1200px)'];
-
 export const Header = () => {
-  const [isDesktop] = useMatchMedia(queries);
   const [isOpened, setIsOpened] = useState(false);
 
   const showMenu: MouseEventHandler<HTMLButtonElement> = () => {
