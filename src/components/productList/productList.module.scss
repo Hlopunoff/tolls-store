@@ -1,0 +1,24 @@
+@import '../../styles/functions';
+
+.products {
+  background-color: var(--background);
+  padding: clamp(to-em(40), 5.5vw, to-em(82)) 0;
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, to-em(400));
+    row-gap: clamp(to-em(20), 5vw, to-em(74));
+    justify-content: space-between;
+
+    @media (max-width: to-em(950)) {
+      column-gap: clamp(to-em(20), 9vw, to-em(100));
+    }
+
+    @media (max-width: to-em(490)) {
+      grid-template-columns: to-em(320);
+      grid-template-rows: repeat(6, to-em(400));
+      justify-content: center;
+    }
+  }
+}
