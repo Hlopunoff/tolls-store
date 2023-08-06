@@ -1,0 +1,37 @@
+@import '../../styles/functions';
+
+.brands {
+  background-color: var(--soal);
+  padding: clamp(to-em(20), 5vw, to-em(54)) 0;
+
+  &__title {
+    font-family: var(--second-family);
+    font-size: clamp(to-rem(20), 5vw, to-rem(30));
+    font-style: normal;
+    font-weight: 400;
+    line-height: to-prc(32, 30);
+    color: var(--white);
+  }
+
+  &__slider {
+    margin-top: to-em(28);
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: to-em(10);
+    column-gap: to-em(5);
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: to-em(425)) {
+      justify-content: center;
+    }
+  }
+
+  &__brand {
+    width: to-em(200);
+  }
+}
