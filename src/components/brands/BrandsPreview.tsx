@@ -1,4 +1,4 @@
-import s from './brands.module.scss';
+import s from './brandsPreview.module.scss';
 
 import truperBrandIcon from '../../assets/images/truper.png';
 import truperBrandIcon2x from '../../assets/images/truper_2x.png';
@@ -9,7 +9,7 @@ import finlandBrandIcon2x from '../../assets/images/finland_2x.png';
 import kaproBrandIcon from '../../assets/images/kapro.png';
 import kaproBrandIcon2x from '../../assets/images/kapro_2x.png';
 
-export const Brands = () => {
+export const BrandsPreview = () => {
   return (
     <section className={s.brands}>
       <div className="container">

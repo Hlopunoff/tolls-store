@@ -1,13 +1,13 @@
 import { Hero } from '../../components/hero/Hero';
 import { ProductList } from '../../components/productList/ProductList';
-import { Brands } from '../../components/brands/Brands';
+import { BrandsPreview } from '../../components/brands/BrandsPreview';
 
 export const MainPage = () => {
   return (
     <>
       <Hero />
       <ProductList />
-      <Brands />
+      <BrandsPreview />
     </>
   );
 };
