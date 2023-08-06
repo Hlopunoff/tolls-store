@@ -1,0 +1,82 @@
+@import '../../styles/functions';
+
+.about-us {
+  background-color: var(--background);
+
+  &__wrap {
+    padding: clamp(to-em(30), 5vw, to-em(80)) 0;
+    display: flex;
+    justify-content: space-between;
+    column-gap: to-em(10);
+
+    @media (max-width: to-em(500)) {
+      justify-content: center;
+    }
+  }
+
+  &__img {
+    min-width: to-prc(640, 1260);
+    min-height: to-prc(480, 640);
+    background-image: url('../../assets/images/about-us.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (max-width: to-em(500)) {
+      display: none;
+    }
+  }
+
+  &__info {
+    width: to-prc(530, 1260);
+
+    @media (max-width: to-em(500)) {
+      width: 90%;
+    }
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-size: clamp(to-rem(20), 5vw, to-rem(30));
+    font-style: normal;
+    font-weight: 400;
+    line-height: to-prc(32, 30);
+    color: var(--black);
+  }
+
+  &__descr {
+    margin-top: clamp(to-em(10), 3vw, to-em(24));
+    font-size: to-rem(16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: to-prc(24, 16);
+    color: var(--black);
+
+    @media (max-width: to-em(567)) {
+      font-size: to-rem(14);
+    }
+  }
+
+  &__btn {
+    margin-top: clamp(to-em(10), 3vw, to-em(40));
+    padding: clamp(to-em(5), 3vw, to-em(14)) clamp(to-em(15), 3vw, to-em(32));
+    font-size: to-rem(16);
+    font-style: normal;
+    font-weight: 500;
+    line-height: to-prc(20, 16);
+    color: var(--white);
+    background-color: var(--soal);
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+
+    @media (max-width: to-em(567)) {
+      font-size: to-rem(12);
+    }
+  }
+}
