@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import db from '../../firebase';
+import { collection, getDocs } from 'firebase/firestore/lite';
 import { ProductType } from '../productType/ProductType';
 
 import s from './productList.module.scss';
@@ -16,6 +19,24 @@ import productImage6 from '../../assets/images/product-6.png';
 import productImage62x from '../../assets/images/product-6_2x.png';
 
 export const ProductList = () => {
+  // console.log(process.env.REACT_APP_API_KEY);
+  useEffect(() => {
+    console.log(db);
+    const getData = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'goods'));
+
+        querySnapshot.forEach((snap) => {
+          console.log(`${snap.id} => ${snap.data()}`);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getData();
+  }, []);
+
   return (
     <section className={s.products}>
       <div className="container">
